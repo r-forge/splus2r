@@ -1,0 +1,9 @@
+import(graphics, stats)
+exportPattern(".*")
+S3method(plot, signalSeries)
+S3method(as.data.frame, signalSeries)
+S3method(as.matrix, signalSeries)
+S3method(deltat, signalSeries)
+S3method(diff, signalSeries)
+S3method(cumsum, signalSeries)
+
