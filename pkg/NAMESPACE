@@ -7,3 +7,5 @@ S3method(deltat, signalSeries)
 S3method(diff, signalSeries)
 S3method(cumsum, signalSeries)
 
+exportClasses(signalSeries)
+exportMethods(as.vector)
