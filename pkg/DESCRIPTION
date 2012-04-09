@@ -1,12 +1,12 @@
 Package: splus2R
 Type:    Package
 Title:   Supplemental S-PLUS functionality in R
-Version: 1.1-0
+Version: 1.1-1
 Date:    2011-10-16
 Author:  William Constantine, Tim Hesterberg,
          Knut Wittkowski, Tingting Song
 Maintainer: William Constantine <wlbconstan@gmail.com>
-Depends: R (>= 2.5.1), methods
+Depends: R (>= 2.7.2), methods
 Description: Currently there are many functions in S-PLUS that are
 	missing in R. To facilitate the conversion of S-PLUS packages to R
 	packages, this package provides some missing S-PLUS functionality
