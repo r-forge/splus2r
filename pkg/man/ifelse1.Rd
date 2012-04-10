@@ -10,7 +10,7 @@ natural syntax when the result is being assigned; see examples below.
 With 5 arguments, this is equivalent to {if(test1) x else if(test2) u
 else v} (where arguments are given by name, not position).
 
-In ifelse1, is.numeric.atomic.vector, test should be a single value, and the calculations for y
+In ifelse1, isNumericAtomicVector, test should be a single value, and the calculations for y
 (or x) are not performed if it is not selected. In contrast, for
 ifelse, test is normally a vector, both x and y are evaluated, even if
 not used, and x and y are vectors the same length as test.}

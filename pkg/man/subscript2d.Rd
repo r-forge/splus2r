@@ -1,13 +1,13 @@
 \name{subscript2d}
 \alias{subscript2d}
-\alias{subscript2d.data.frame}
+\alias{subscript2dDataFrame}
 \alias{subscript2d.default}
-\alias{subscript2d.matrix}
+\alias{subscript2dMatrix}
 \title{Uniform Rectangular Data Subscripting Function}
 \concept{splus}
 \usage{subscript2d(x,i,j)
-subscript2d.matrix(x,i,j)
-subscript2d.data.frame(x,i,j)}
+subscript2dMatrix(x,i,j)
+subscript2dDataFrame(x,i,j)}
 \description{subscript2d is for subscripting matrices and data frames.}
 
 \arguments{

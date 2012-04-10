@@ -4,6 +4,7 @@
 \alias{colMedians}
 \alias{colMins}
 \alias{colRanges}
+\alias{colVars}
 \alias{rowIds}
 \alias{rowMaxs}
 \alias{rowMins}
@@ -15,6 +16,8 @@ colMaxs(x, na.rm = FALSE, dims = 1, n = NULL)
 colMedians(x, na.rm=FALSE)
 colMins(x, na.rm = FALSE, dims = 1, n = NULL)
 colRanges(x, na.rm = FALSE, dims = 1, n = NULL)
+colVars(x, na.rm=FALSE, dims = 1, unbiased = TRUE,
+        SumSquares = FALSE, weights = NULL, freq = NULL, n = NULL)
 rowIds(x, do.NULL=TRUE, prefix="row")
 rowMaxs(x, na.rm = FALSE, dims = 1, n = NULL)
 rowMins(x, na.rm = FALSE, dims = 1, n = NULL)
@@ -35,6 +38,10 @@ rowRanges(x, na.rm = FALSE, dims = 1, n = NULL)
 \item{na.rm}{logical, NA values are removed if TRUE.}
 
 \item{prefix}{character string preface for column IDs returned by rowIds or colIds.}
+
+\item{unbiased}{logical, unbiased variance estimates returned if \code{TRUE}.}
+\item{SumSquares}{logical, sums of squares are returned if \code{TRUE}.}
+\item{weights, freq}{unsupported, here for backwards compatibility.}
 }
 
 \value{
@@ -42,12 +49,8 @@ corresponding summary by row or by column.
 }
 
 \seealso{
-These functions have been removed from this package, because better
-versions are available in the \code{aggregate} package:
-  \code{\link[aggregate]{colStdevs}},
-  \code{\link[aggregate]{colVars}},
-  \code{\link[aggregate]{rowStdevs}},
-  \code{\link[aggregate]{rowVars}},
+See 'aggregate' package for alternative definitions of colStdevs, colVars, rowStdevs 
+and rowVars functions.
 }
 
 

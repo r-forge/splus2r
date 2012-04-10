@@ -1,8 +1,8 @@
-\name{is.numeric.atomic.vector}
-\alias{is.numeric.atomic.vector}
+\name{isNumericAtomicVector}
+\alias{isNumericAtomicVector}
 \title{Tests whether an object is a vector or not}
 \concept{utilities}
-\usage{is.numeric.atomic.vector(x)}
+\usage{isNumericAtomicVector(x)}
 \description{The \code{is.vector} function returns a \code{FALSE}
 value in some cases where intuitively one might
 expect a \code{TRUE} value to be returned. For example,
@@ -17,12 +17,12 @@ following:
 
 These results are not necessarily incorrect, they are
 just one interpretion of the definition of a vector.
-Contrarily, the \code{is.numeric.atomic.vector(z)} function returns
+Contrarily, the \code{isNumericAtomicVector(z)} function returns
 \code{TRUE} for each of the above examples. Thus,
-\code{is.numeric.atomic.vector} expands the basic definition of a
+\code{isNumericAtomicVector} expands the basic definition of a
 vector to allow matrices containing a single row
 or column and named vectors. Also, unlike \code{is.vector},
-\code{is.numeric.atomic.vector} returns \code{FALSE} for objects of class \code{list}.}
+\code{isNumericAtomicVector} returns \code{FALSE} for objects of class \code{list}.}
 
 \arguments{
 \item{x}{an object of arbitrary class.}
@@ -35,20 +35,20 @@ of this vector is equal to \code{length(x)}.
 }
 
 \examples{
-## cases where is.numeric.atomic.vector returns 
+## cases where isNumericAtomicVector returns 
 ## TRUE 
 z <- 1:3;names(z) <- letters[1:3]
-is.numeric.atomic.vector(z)
-is.numeric.atomic.vector(matrix(1:3, nrow=1))
-is.numeric.atomic.vector(matrix(1:3, ncol=1))
-is.numeric.atomic.vector(1:5)
-is.numeric.atomic.vector(letters)
+isNumericAtomicVector(z)
+isNumericAtomicVector(matrix(1:3, nrow=1))
+isNumericAtomicVector(matrix(1:3, ncol=1))
+isNumericAtomicVector(1:5)
+isNumericAtomicVector(letters)
 
-## cases where is.numeric.atomic.vector returns 
+## cases where isNumericAtomicVector returns 
 ## FALSE 
-is.numeric.atomic.vector(list(1:3))
-is.numeric.atomic.vector(data.frame(1:3,2:4))
-is.numeric.atomic.vector(matrix(1:12, nrow=4))
+isNumericAtomicVector(list(1:3))
+isNumericAtomicVector(data.frame(1:3,2:4))
+isNumericAtomicVector(matrix(1:12, nrow=4))
 }
 \keyword{utilities}
 

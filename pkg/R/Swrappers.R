@@ -17,7 +17,7 @@
 # deparseText
 # ifelse1
 # is.missing
-# is.numeric.atomic.vector
+# isNumericAtomicVector
 # is.rectangular
 # lowerCase
 # numCols
@@ -83,7 +83,7 @@
     stop("Only dims=1 is supported")
   if(!is.null(n))
     stop("Argument n is not supported")
-  if(is.numeric.atomic.vector(x))
+  if(isNumericAtomicVector(x))
     return(max(x, na.rm=na.rm))
   if(!is(x,"matrix") && !is(x,"data.frame"))
     stop("Input must be a matrix or a data.frame")
@@ -93,7 +93,7 @@
 
 "colMedians" <- function(x, na.rm=FALSE)
 {
-  if(is.numeric.atomic.vector(x))
+  if(isNumericAtomicVector(x))
     return(median(x, na.rm=na.rm))
   if(!is(x,"matrix") && !is(x,"data.frame"))
     stop("Input must be a matrix or a data.frame")
@@ -106,7 +106,7 @@
 # the version below will handle this.
 #"colMeans" <- function(x, na.rm=FALSE, dims=NULL)
 #{
-#	if(is.numeric.atomic.vector(x))
+#	if(isNumericAtomicVector(x))
 #	  return(mean(x, na.rm=na.rm))
 #
 #  # try coercion if input is the wrong class
@@ -122,7 +122,7 @@
     stop("Only dims=1 is supported")
   if(!is.null(n))
     stop("Argument n is not supported")
-  if(is.numeric.atomic.vector(x))
+  if(isNumericAtomicVector(x))
     return(min(x, na.rm=na.rm))
   if(!is(x,"matrix") && !is(x,"data.frame"))
     stop("Input must be a matrix or a data.frame")
@@ -136,7 +136,7 @@
     stop("Only dims=1 is supported")
   if(!is.null(n))
     stop("Argument n is not supported")
-  if(is.numeric.atomic.vector(x))
+  if(isNumericAtomicVector(x))
     return(range(x, na.rm=na.rm))
   if(!is(x,"matrix") && !is(x,"data.frame"))
     stop("Input must be a matrix or a data.frame")
@@ -144,7 +144,7 @@
   apply(x, MARGIN=2, FUN=range, na.rm=na.rm)
 }
 
-"colStdevs" <- function(x, ...) sqrt(colVars(x, ...))
+#"colStdevs" <- function(x, ...) sqrt(colVars(x, ...))
 
 "colVars" <- function(x, na.rm=FALSE, dims = 1, unbiased = TRUE,
 		      SumSquares = FALSE, weights = NULL,
@@ -162,7 +162,7 @@
     stop("Argument freq is not supported")
   if(!is.null(n))
     stop("Argument n is not supported")
-  if(is.numeric.atomic.vector(x))
+  if(isNumericAtomicVector(x))
     return(var(x, na.rm=na.rm))
 
   unlist(apply(x, MARGIN=2, FUN=var, na.rm=na.rm))
@@ -176,7 +176,7 @@
     stop("Only dims=1 is supported")
   if(!is.null(n))
     stop("Argument n is not supported")
-  if(is.numeric.atomic.vector(x))
+  if(isNumericAtomicVector(x))
     return(x)
   if(!is(x,"matrix") && !is(x,"data.frame"))
     stop("Input must be a matrix or a data.frame")
@@ -190,7 +190,7 @@
     stop("Only dims=1 is supported")
   if(!is.null(n))
     stop("Argument n is not supported")
-  if(is.numeric.atomic.vector(x))
+  if(isNumericAtomicVector(x))
     return(x)
   if(!is(x,"matrix") && !is(x,"data.frame"))
     stop("Input must be a matrix or a data.frame")
@@ -204,7 +204,7 @@
     stop("Only dims=1 is supported")
   if(!is.null(n))
     stop("Argument n is not supported")
-  if(is.numeric.atomic.vector(x))
+  if(isNumericAtomicVector(x))
     return(rbind(x,x))
   if(!is(x,"matrix") && !is(x,"data.frame"))
     stop("Input must be a matrix or a data.frame")
@@ -212,30 +212,30 @@
   apply(x, MARGIN=1, FUN=range, na.rm=na.rm)
 }
 
-rowStdevs <- function(x, ...) sqrt(rowVars(x, ...))
+#rowStdevs <- function(x, ...) sqrt(rowVars(x, ...))
 
-rowVars <- function(x, na.rm = FALSE, dims = 1, unbiased = TRUE, SumSquares = FALSE,
-		    weights = NULL, freq = NULL, n = NULL)
-{
-  if(!identical(dims,1))
-    stop("Only dims=1 is supported")
-  if(!identical(unbiased,TRUE))
-    stop("Only unbiased=TRUE is supported")
-  if(!identical(SumSquares,FALSE))
-    stop("Only unbiased=TRUE is supported")
-  if(!is.null(weights))
-    stop("Argument weights is not supported")
-  if(!is.null(freq))
-    stop("Argument freq is not supported")
-  if(!is.null(n))
-    stop("Argument n is not supported")
-  if(is.numeric.atomic.vector(x))
-    return(NA*x)
-  if(!is(x,"matrix") && !is(x,"data.frame"))
-    stop("Input must be a matrix or a data.frame")
-
-  apply(x, MARGIN=1, FUN=var, na.rm=na.rm)
-}
+#rowVars <- function(x, na.rm = FALSE, dims = 1, unbiased = TRUE, SumSquares = FALSE,
+#		    weights = NULL, freq = NULL, n = NULL)
+#{
+#  if(!identical(dims,1))
+#    stop("Only dims=1 is supported")
+#  if(!identical(unbiased,TRUE))
+#    stop("Only unbiased=TRUE is supported")
+#  if(!identical(SumSquares,FALSE))
+#    stop("Only unbiased=TRUE is supported")
+#  if(!is.null(weights))
+#    stop("Argument weights is not supported")
+#  if(!is.null(freq))
+#    stop("Argument freq is not supported")
+#  if(!is.null(n))
+#    stop("Argument n is not supported")
+#  if(isNumericAtomicVector(x))
+#    return(NA*x)
+#  if(!is(x,"matrix") && !is(x,"data.frame"))
+#    stop("Input must be a matrix or a data.frame")
+#
+#  apply(x, MARGIN=1, FUN=var, na.rm=na.rm)
+#}
 
 ###
 # deparseText
@@ -294,17 +294,17 @@ rowVars <- function(x, na.rm = FALSE, dims = 1, unbiased = TRUE, SumSquares = FA
 }
 
 ###
-# is.numeric.atomic.vector
+# isNumericAtomicVector
 #
 # NOTE: This function is NOT defined in S-PLUS, but it is used
 # often in the splus2R package and so it is defined here for
 # convenience. A similar function (isVectorAtomic) is defined
 # in the IFULTOOLS package, but replacing all occurrences of
-# is.numeric.atomic.vector() with isVectorAtomic() would form a mutual
+# isNumericAtomicVector() with isVectorAtomic() would form a mutual
 # dependence between the packages, which is not desirable.
 ###
 
-"is.numeric.atomic.vector" <- function(x)
+"isNumericAtomicVector" <- function(x)
   is.atomic(x) && ((numRows(x) == 1 || numCols(x)) == 1) && is(x,"numeric")
 
 ###
@@ -518,7 +518,7 @@ rowVars <- function(x, na.rm = FALSE, dims = 1, unbiased = TRUE, SumSquares = FA
   UseMethod("subscript2d")
 }
 
-subscript2d.matrix <- function(x,i,j){
+subscript2dMatrix <- function(x,i,j){
   if(!missing(i) && !missing(j))
     return(x[i, j, drop = FALSE])
   if(!missing(i))
@@ -528,13 +528,13 @@ subscript2d.matrix <- function(x,i,j){
   x[,  , drop = FALSE]
 }
 
-subscript2d.data.frame <- subscript2d.matrix
+subscript2dDataFrame <- subscript2dMatrix
 
 
 subscript2d.default <- function(x,i,j){
   # Subscript function for rectangular objects
   if(length(dim(x)) == 2){
-    return(subscript2d.matrix(x, i, j))
+    return(subscript2dMatrix(x, i, j))
   }
   # rest is for atomic-like vectors
   if(!missing(j)) {
