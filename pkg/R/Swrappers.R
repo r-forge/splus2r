@@ -380,7 +380,7 @@
 
 "peaks" <- function(x, span=3, strict=TRUE)
 {
-  z <- embed(rev(as.vector(x)), dim=span)
+  z <- embed(rev(as.vector(x)), dimension = span)
   z <- z[rev(seq(nrow(z))),]
   s <- span %/% 2
   v <- max.col(z) == 1 + s
@@ -490,7 +490,7 @@
   }
   else {
     # Default, multivariate method
-    eS <- eigen(cov, sym = TRUE)
+    eS <- eigen(cov, symmetric = TRUE)
     if(any(eS$values < 0))
       stop("cov is not positive definite")
     z <- matrix(rnorm(d * n), n) %*% (sqrt(eS$values) *

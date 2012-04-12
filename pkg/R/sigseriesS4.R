@@ -69,7 +69,7 @@ setAs("numeric", "numericSequence",
     if(!len)
       return(numericSequence())
     if(len == 1)
-      return(numericSequence(from, from, length = 1))
+      return(numericSequence(from, from, length. = 1))
 
     # verify that it's a valid sequence
     diffs <- from[ -1 ] - from[ - length(from) ]
@@ -79,7 +79,7 @@ setAs("numeric", "numericSequence",
 
     # create sequence object
     numericSequence(from = from[1], by = diffs[1],
-      length = len)
+      length. = len)
   })
 
 setMethod("[", signature(x = "numericSequence"),
@@ -452,7 +452,7 @@ setAs("list", "signalSeries",
         paste(nms, collapse=", "))
 
     pos <- from$positions
-    pos <- numericSequence(from=pos$from, by=pos$by, to=pos$to, length=pos$length)
+    pos <- numericSequence(from = pos$from, by = pos$by, to = pos$to, length. = pos$length)
 
     z <- signalSeries(from$data, positions.=pos, from$units, from$units.position)
     z@title <- from$title

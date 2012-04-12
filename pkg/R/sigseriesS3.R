@@ -149,7 +149,7 @@
 
   if (missing(positions.)) {
     len <- numRows(ret@data)
-    ret@positions <- numericSequence(from=from, length=len, by=by)
+    ret@positions <- numericSequence(from = from, length. = len, by = by)
   }
   else{
     if (!is(positions., "numericSequence"))
